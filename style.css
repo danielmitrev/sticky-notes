@@ -1,0 +1,216 @@
+/* custom scrollbars (Chrome only) */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(172, 172, 172, 0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #e4e4e4;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+}
+
+.add-note-btn {
+    margin-left: auto;
+    
+    height: 35px;
+    width: 110px;
+    
+    font-size: 1em;
+    color: #cecece;
+    background-color: #0000004d;
+    border: 1px solid #868686c4;
+    border-radius: 2px;
+}
+
+.add-note-btn:hover {
+    color: #d4d4d4;
+    border: 1px solid #d4d4d4;
+}
+
+.add-note-btn i {
+    font-size: inherit;
+}
+
+header span {
+    color: #e2e2e2;
+    font-size: 2em;
+    font-family: 'Patrick Hand', cursive;
+}
+
+header i {
+    color: #e2e2e2;
+    font-size: 1.5em;
+    margin-right: 0.2em;
+}
+
+.notes {
+    position: relative;
+}
+
+/*
+* COLORS
+*/
+
+.color-green {
+    background-color: #d0efd8;
+}
+
+.color-blue {
+    background-color: #d0e4ef;
+}
+
+.color-red {
+    background-color: #efd0d0;
+}
+
+.color-yellow {
+    background-color: #e0e5ac;
+}
+
+
+/*
+* NOTES
+*/
+
+.note {
+    position: absolute;
+    
+    border: 1px solid #0000002b;
+    
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.5em;
+}
+
+.note-text {
+    padding: 15px;
+    height: 100%;
+    overflow-y: auto;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.note-controls {
+    width: 100%;
+    position: absolute;
+    background-color: rgba(46, 46, 46, 0.69);
+    display: none;
+    
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: #e4e4e4;
+    padding: 10px;
+}
+
+.note-controls select {
+    margin-left: 5px;
+    color: #cecece;
+    background-color: #0000004d;
+    border: 1px solid #868686c4;
+    border-radius: 2px;
+    height: 25px;
+}
+
+.note-controls select option {
+    background-color: #3e3e3e;
+}
+
+.note-controls button {
+    
+    float: right;
+    
+    color: #cecece;
+    background-color: #0000004d;
+    border: 1px solid #868686c4;
+    border-radius: 2px;
+    height: 25px;
+    width: 70px;
+    margin-left: 10px;
+}
+
+.note-controls button:hover, .note-controls select:hover {
+    color: #d4d4d4;
+    border: 1px solid #d4d4d4;
+}
+/* ------------------------ */
+
+
+.resizer {
+    color: #0000004d;
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+    display: none;
+}
+
+.resizer:hover {
+    color: #5a5a5a;
+}
+
+.resizer i {
+    transform: rotate(45deg);
+}
+
+.note:not(.editing):hover .note-controls {
+    display: block;
+}
+
+.note:not(.editing):hover .resizer {
+    display: block;
+}
+
+/*
+* EDITOR
+*/
+
+.editing {
+    overflow-y: auto;
+}
+
+.note-editor {
+    margin: 15px;
+}
+
+.note-editor textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    
+    padding: 10px;
+    font-size: .9em;
+}
+
+.note-editor button {
+    width: 70px;
+    padding: 5px 0;
+    margin-right: 10px;
+}
